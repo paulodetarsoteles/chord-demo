@@ -1,0 +1,39 @@
+# .gitignore para projeto .NET (mantendo a pasta storage e os appsettings)
+
+# Build outputs
+bin/
+obj/
+**/bin/
+**/obj/
+
+# Visual Studio and user-specific files
+.vs/
+*.user
+*.suo
+*.userosscache
+
+# IDEs
+.idea/
+.vscode/
+
+# NuGet
+*.nupkg
+packages/
+.nuget/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.cache
+
+# Publish output
+publish/
+*.Publish.xml
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Keep these in repo (do not ignore):
+# - storage/ (contém JSONs do projeto)
+# - appsettings.*.json (configs/presets)

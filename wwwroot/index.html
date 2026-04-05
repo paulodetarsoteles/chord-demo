@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Chord Detector</title>
+    <link rel="stylesheet" href="/lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles.css">
+    <!-- Inline empty favicon to prevent browser requesting /favicon.ico and causing 404 -->
+    <link rel="icon" href="data:;base64,">
+  </head>
+  <body>
+    <div class="app-wrapper d-flex align-items-center justify-content-center">
+      <div class="app-box p-4">
+        <header class="d-flex justify-content-between align-items-start mb-3">
+          <div>
+            <h1 class="h4 mb-1">Detector de Acordes</h1>
+            <p class="text-muted mb-0">Faça upload ou selecione uma música do armazenamento.</p>
+          </div>
+          <div>
+            <button id="themeToggle" class="btn btn-outline-secondary btn-sm">Tema</button>
+          </div>
+        </header>
+
+        <section class="mb-3">
+          <label for="storageSelect" class="form-label">Selecionar música (armazenamento)</label>
+          <select id="storageSelect" class="form-select mb-2">
+            <option value="">-- nenhuma selecionada --</option>
+          </select>
+
+          <form id="uploadForm" class="d-flex flex-column align-items-center">
+            <input class="form-control mb-3" type="file" name="file" accept="audio/*" required />
+            <button id="submitBtn" type="submit" class="btn btn-primary btn-lg">Enviar e Analisar</button>
+          </form>
+        </section>
+
+        <section class="mb-3">
+          <div class="row align-items-start">
+            <div class="col-md-8 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <div id="nowPlaying" class="mb-2 fw-semibold">Arquivo: <span id="currentFile">—</span></div>
+                  <audio id="audio" controls class="w-100 mb-2"></audio>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <h6>Acorde atual</h6>
+                  <div id="current" class="fs-5"> <span id="chord">—</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="storageList">
+          <h6 class="mb-2">Músicas no armazenamento</h6>
+          <div id="listContainer">Carregando...</div>
+        </section>
+      </div>
+    </div>
+
+    <script src="/lib/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="/script.js"></script>
+  </body>
+</html>
